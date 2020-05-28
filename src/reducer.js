@@ -17,8 +17,8 @@ export default function reducer(state = [], action) {
       return state.filter((bug) => bug.id !== action.payload.id);
     case actions.BUG_RESOLVED:
       return state.map(
-        ({ id, resolved }) =>
-          id !== action.payload.id ? bug : { ...bug, resolved: true } // update in an immutable way
+        (bug) =>
+          bug.id !== action.payload.id ? bug : { ...bug, resolved: true } // update in an immutable way
       );
     default:
       return state;
