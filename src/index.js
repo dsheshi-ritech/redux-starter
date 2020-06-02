@@ -10,6 +10,15 @@ import {
 import { userAdded } from "./store/users";
 const store = configureStore();
 
+store.dispatch((dispatch, getState) => {
+  dispatch({ type: "bugsReceived", bugs: [1, 2, 3] });
+});
+
+store.dispatch({
+  type: "error",
+  payload: { message: "An error occurred." },
+});
+
 store.dispatch(userAdded({ name: "User 1" }));
 store.dispatch(userAdded({ name: "User 2" }));
 store.dispatch(projectAdded({ name: "Project 1" }));
