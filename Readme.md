@@ -1,23 +1,9 @@
-## Middleware
+## Consuming Api
 
-## Pipeline
+1. Call Api (fetch, axios atc)
+2. Dispatch with success => reducer will catch and update state
+3. Dispatch with success
 
-dispatch -> root reducer -> child reducer
+Problem: Becomes repetitive
 
--store
--next
--action
-
-- Dispatch functions
-
-//Add logic to store
-store.dispatch(() => {
-// Call an API
-// When promise is resolved => dispatch()
-// If promise is rejected => dispatch()
-})
-
-## Thunk , middleware that dispatches functions
-
-Automaticly with toolkit
-or manually install library: redux-thunk
+Solution: Implement middleware
